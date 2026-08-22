@@ -1,0 +1,51 @@
+<section class="relative isolate min-w-0 overflow-hidden bg-ink" aria-labelledby="love-heading">
+  <div class="absolute inset-0 -z-10">
+    <picture class="block h-full w-full">
+      <source
+        media="(min-width: 768px)"
+        srcset="/assets/photos/love-story-bg.jpg 1x, /assets/photos/love-story-bg@2x.jpg 2x"
+        width="1920"
+        height="1080"
+      />
+      <img
+        class="h-full w-full object-cover"
+        src="/assets/photos/love-story-bg-mobile.jpg"
+        width="430"
+        height="932"
+        alt="Фон истории любви Вероники и Дмитрия"
+      />
+    </picture>
+    <div class="absolute inset-0 bg-[color-mix(in_srgb,#1F1616_58%,#C4A4A5)]"></div>
+  </div>
+
+  <div class="mx-auto w-full max-w-3xl min-w-0 px-4 py-20 sm:px-6 sm:py-24">
+    <h2 id="love-heading" class="text-center font-display text-4xl text-cream sm:text-5xl">Love Story</h2>
+    <div class="gold-rule mx-auto mt-6 mb-14 w-32"></div>
+
+    <div class="flex flex-col items-center gap-20">
+      @for (moment of moments; track moment.year) {
+        <figure
+          #momentCard
+          class="w-full max-w-[512px] transition-all duration-700"
+          [attr.data-year]="moment.year"
+          [class.translate-y-6]="!visible()[moment.year]"
+          [class.opacity-40]="!visible()[moment.year]"
+          [class.opacity-100]="visible()[moment.year]"
+        >
+          <img
+            class="aspect-square w-full max-w-[512px] object-cover"
+            [src]="moment.src"
+            [srcset]="moment.src + ' 1x, ' + moment.src2x + ' 2x'"
+            width="512"
+            height="512"
+            [alt]="moment.alt"
+          />
+          <figcaption class="mt-4 text-center">
+            <p class="font-display text-3xl text-gold-highlight">{{ moment.year }}</p>
+            <p class="mt-1 font-sans text-lg text-cream">{{ moment.caption }}</p>
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>

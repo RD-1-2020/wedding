@@ -1,0 +1,62 @@
+<section class="bg-background px-4 py-16 sm:px-6 sm:py-20" aria-labelledby="copy-heading">
+  <div class="mx-auto w-full max-w-3xl min-w-0">
+    <p class="text-center font-sans text-xs tracking-[0.28em] text-dusty-rose uppercase">Для гостей</p>
+    <h2 id="copy-heading" class="mt-2 text-center font-display text-4xl text-foreground sm:text-5xl">Слова приглашения</h2>
+    <div class="gold-rule mx-auto my-8 w-32"></div>
+
+    <section hlmCard>
+      <div hlmCardContent class="space-y-6 font-sans text-base leading-relaxed text-card-foreground">
+        <p>
+          Для нас главное — ваше присутствие, а дресс-код — это лишь праздничный вид и хорошее настроение!
+        </p>
+        <p>Переобуться можно на первом этаже, верхнюю одежду оставить перед входом в зал.</p>
+        <p>Зал находится на втором этаже</p>
+        <p>Ваше присутствие в день нашей свадьбы — самый значимый подарок для нас!</p>
+        <p>
+          Мы понимаем, что дарить цветы на свадьбу — это традиция, но мы не сможем насладиться их красотой в полной
+          мере... Будем рады любой другой альтернативе
+        </p>
+      </div>
+
+      <hlm-separator class="my-2" />
+
+      <div hlmCardHeader>
+        <h3 hlmCardTitle class="font-display text-2xl">Ведущая Марина</h3>
+      </div>
+      <div hlmCardContent>
+        <p class="font-sans text-base leading-relaxed text-card-foreground">
+          Если вы хотите подготовить творческий подарок или сюрприз, пожалуйста, предупредите ведущую Марину:
+        </p>
+        <p class="mt-4">
+          <a class="font-sans text-base font-medium underline decoration-gold-mid underline-offset-4" [href]="phoneTel">
+            {{ phoneDisplay }}
+          </a>
+        </p>
+        <div class="mt-4 flex flex-wrap items-center gap-3">
+          <a
+            hlmBtn
+            variant="link"
+            [href]="telegram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram ведущей Марины"
+          >
+            <ui-icon-telegram />
+            Telegram
+          </a>
+          <a
+            hlmBtn
+            variant="link"
+            [href]="vk"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="VK ведущей Марины"
+          >
+            <ui-icon-vk />
+            VK
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

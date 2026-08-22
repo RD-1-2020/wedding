@@ -1,0 +1,16 @@
+<section class="bg-background px-4 py-16 sm:px-6 sm:py-20" aria-labelledby="map-heading">
+  <div class="mx-auto w-full max-w-5xl min-w-0">
+    <h2 id="map-heading" class="text-center font-display text-4xl text-foreground sm:text-5xl">Карта площадки</h2>
+    <div class="gold-rule mx-auto mt-6 mb-10 w-32"></div>
+    <div hlmCard class="overflow-hidden py-0">
+      <iframe
+        class="block aspect-video h-auto w-full max-w-full"
+        [src]="mapSrc()"
+        width="1280"
+        height="720"
+        [attr.frameborder]="'0'"
+        title="Карта площадки"
+      ></iframe>
+    </div>
+  </div>
+</section>

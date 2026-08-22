@@ -1,0 +1,95 @@
+<section class="bg-background px-4 pb-16 sm:px-6 sm:pb-20" aria-labelledby="rsvp-heading">
+  <div class="mx-auto w-full max-w-3xl min-w-0">
+    <h2 id="rsvp-heading" class="text-center font-display text-4xl text-foreground sm:text-5xl">
+      Подтверждение присутствия
+    </h2>
+    <div class="gold-rule mx-auto mt-6 mb-10 w-32"></div>
+
+    <section hlmCard>
+      <div hlmCardContent>
+        <p class="mb-6 font-sans text-base text-card-foreground">
+          Пожалуйста, подтвердите присутствие не позднее 15 ноября.
+        </p>
+
+        <form (submit)="$event.preventDefault(); submit()">
+          <div hlmFieldGroup>
+            <div hlmField>
+              <label hlmFieldLabel for="firstName">Имя</label>
+              <input
+                hlmInput
+                id="firstName"
+                name="firstName"
+                autocomplete="given-name"
+                [value]="firstName()"
+                (input)="onTextInput($event, firstName.set.bind(firstName))"
+              />
+            </div>
+
+            <div hlmField>
+              <label hlmFieldLabel for="lastName">Фамилия</label>
+              <input
+                hlmInput
+                id="lastName"
+                name="lastName"
+                autocomplete="family-name"
+                [value]="lastName()"
+                (input)="onTextInput($event, lastName.set.bind(lastName))"
+              />
+            </div>
+
+            <div hlmField orientation="horizontal">
+              <label hlmFieldLabel id="with-partner-label" for="with-partner">Буду с второй половинкой</label>
+              <hlm-switch
+                inputId="with-partner"
+                aria-labelledby="with-partner-label"
+                [checked]="withPartner()"
+                (checkedChange)="withPartner.set($event)"
+              />
+            </div>
+
+            <div hlmField orientation="horizontal">
+              <label hlmFieldLabel id="with-child-label" for="with-child">Буду с ребёнком</label>
+              <hlm-switch
+                inputId="with-child"
+                aria-labelledby="with-child-label"
+                [checked]="withChild()"
+                (checkedChange)="withChild.set($event)"
+              />
+            </div>
+
+            <div hlmField>
+              <label hlmFieldLabel for="extraInfo">Дополнительная информация</label>
+              <textarea
+                hlmTextarea
+                id="extraInfo"
+                name="extraInfo"
+                rows="4"
+                [value]="extraInfo()"
+                (input)="onTextInput($event, extraInfo.set.bind(extraInfo))"
+              ></textarea>
+            </div>
+
+            <button hlmBtn variant="gold" size="lg" type="submit" [disabled]="status() === 'sending'">
+              @if (status() === 'sending') {
+                Отправляем…
+              } @else {
+                Отправить ответ
+              }
+            </button>
+          </div>
+        </form>
+
+        @if (status() === 'success') {
+          <hlm-alert class="mt-5" role="status">
+            <p hlmAlertDescription>Спасибо! Ваш ответ отправлен.</p>
+          </hlm-alert>
+        }
+        @if (status() === 'error') {
+          <hlm-alert class="mt-5" variant="destructive">
+            <p hlmAlertDescription>Не удалось отправить ответ. Попробуйте ещё раз позже.</p>
+          </hlm-alert>
+        }
+      </div>
+    </section>
+  </div>
+</section>

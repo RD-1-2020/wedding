@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css';
+
+@import '@spartan-ng/brain/hlm-tailwind-preset.css';
+
+@source "../libs/ui";
+
+@theme {
+  --color-dusty-rose: #c4a4a5;
+  --color-powder: #f4e8e1;
+  --color-cream: #f3e5c8;
+  --color-gold-highlight: #f0d56a;
+  --color-gold-mid: #d4af37;
+  --color-gold-shadow: #a68521;
+  --color-gold: #d4af37;
+  --color-ink: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+  --background: #f4e8e1;
+  --foreground: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --card: #f3e5c8;
+  --card-foreground: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --popover: #f3e5c8;
+  --popover-foreground: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --primary: #c4a4a5;
+  --primary-foreground: #1f1616;
+  --secondary: #f3e5c8;
+  --secondary-foreground: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --muted: color-mix(in srgb, #f4e8e1 72%, #c4a4a5 28%);
+  --muted-foreground: color-mix(in srgb, #1f1616 58%, #c4a4a5 42%);
+  --accent: #c4a4a5;
+  --accent-foreground: #1f1616;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: color-mix(in srgb, #c4a4a5 48%, #f3e5c8);
+  --input: color-mix(in srgb, #c4a4a5 42%, #f3e5c8);
+  --ring: #d4af37;
+  --sidebar: #f4e8e1;
+  --sidebar-foreground: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --sidebar-primary: #c4a4a5;
+  --sidebar-primary-foreground: #1f1616;
+  --sidebar-accent: #f3e5c8;
+  --sidebar-accent-foreground: color-mix(in srgb, #1f1616 78%, #c4a4a5 22%);
+  --sidebar-border: color-mix(in srgb, #c4a4a5 48%, #f3e5c8);
+  --sidebar-ring: #d4af37;
+}
+
+@layer base {
+  html {
+    overflow-x: clip;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    min-width: 0;
+    overflow-x: clip;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+
+@utility gold-cta {
+  background-image: linear-gradient(
+    165deg,
+    var(--color-gold-highlight) 0%,
+    var(--color-gold-mid) 46%,
+    var(--color-gold-shadow) 100%
+  );
+  color: color-mix(in srgb, #1a1408 88%, var(--color-gold-shadow));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--color-gold-highlight) 85%, white),
+    inset 0 -1px 0 color-mix(in srgb, var(--color-gold-shadow) 70%, transparent),
+    0 2px 10px color-mix(in srgb, var(--color-gold-shadow) 30%, transparent);
+}
+
+@utility gold-cta-hover {
+  filter: brightness(1.04);
+}
+
+@utility gold-rule {
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-shadow) 8%,
+    var(--color-gold-highlight) 42%,
+    var(--color-gold-mid) 58%,
+    var(--color-gold-shadow) 92%,
+    transparent
+  );
+}
+
+@utility gold-ornament {
+  background-image: linear-gradient(
+    180deg,
+    var(--color-gold-highlight) 0%,
+    var(--color-gold-mid) 48%,
+    var(--color-gold-shadow) 100%
+  );
+}

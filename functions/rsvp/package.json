@@ -1,0 +1,11 @@
+{
+  "name": "wedding-rsvp",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.4.5"
+  }
+}

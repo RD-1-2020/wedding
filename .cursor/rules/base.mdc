@@ -51,6 +51,6 @@ One rework loop if tester fails. Then stop and report remaining gaps as links in
 ## Project (from the user)
 
 - Angular **22** wedding site for Veronika and Dmitry, date **26.12.26**
-- Palette: dusty rose, powder, gold
+- Palette: dusty rose, powder, white, gold
 - UI kit: **shadcn/ui + Tailwind**
 - No backend unless the user asks for one
