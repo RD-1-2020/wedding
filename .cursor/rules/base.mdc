@@ -1,0 +1,56 @@
+---
+description: Base harness rules — /orchestrate pipeline, three subagents, language split, wedding site stack.
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Base harness rules
+
+Project details: `AGENTS.md`. Harness files (this rule, skills, agents, `AGENTS.md`): **English**.
+Replies to the user and all website copy: **Russian**.
+
+## Orchestration
+
+Non-trivial product work goes through **`/orchestrate`**. Parent chat coordinates only; it does not write requirements, implement the UI, or drive Playwright.
+
+Pipeline (sequential, not parallel):
+
+```
+analyst → developer → tester
+```
+
+Do not add or edit MCP config (`mcp.json`). Playwright MCP is already connected.
+
+## Subagents
+
+| Agent | Role | Artifact |
+|---|---|---|
+| `analyst` | FR, then NFR, then user stories. | Always **one** file: `docs/requirements.md` (update in place, never number it). |
+| `developer` | Angular frontend from those requirements. | App code + **new** `docs/impl-report-NN.md` each run (`01`, `02`, …). Never overwrite an older report. |
+| `tester` | Start `npm start` → `http://localhost:4200/`, Playwright MCP vs analyst US. | **New** `docs/test-report-NN.md` each run. Read latest `impl-report-*.md`. Never overwrite an older report. |
+
+`NN` = next integer after the highest existing file of that prefix, two digits. Developer and tester number independently.
+
+## Handoff (subagents — STRICT)
+
+Subagent **final message = path links only**. No summaries, excerpts, AC text, code, or explanations. The user reads files in the IDE.
+
+Valid:
+
+```
+docs/requirements.md
+docs/impl-report-02.md
+```
+
+Invalid: any prose, bullets of what was done, pasted markdown.
+
+If a subagent replies with text → orchestrator rejects and re-delegates. Orchestrator forwards **links only** to the user (no quoting files).
+
+One rework loop if tester fails. Then stop and report remaining gaps as links in Russian.
+
+## Project (from the user)
+
+- Angular **22** wedding site for Veronika and Dmitry, date **26.12.26**
+- Palette: dusty rose, powder, gold
+- UI kit: **shadcn/ui + Tailwind**
+- No backend unless the user asks for one
