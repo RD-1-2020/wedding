@@ -76,7 +76,7 @@ export function googleCalendarUrl(isFull: boolean): string {
   const text = encodeURIComponent('Свадьба Вероники и Дмитрия');
   const location = isFull ? encodeURIComponent('г. Новосибирск, Красный проспект 68') :
     encodeURIComponent('г. Новосибирск, ул. Новая Заря, 53А');
-  const details = encodeURIComponent(scheduleItems(isFull).map((place => place.title + '' + place.time)).join('\n'));
+  const details = encodeURIComponent(scheduleItems(isFull).map((place => place.title + ' - ' + place.time)).join('\n'));
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}&location=${location}&details=${details}`;
 }
 
