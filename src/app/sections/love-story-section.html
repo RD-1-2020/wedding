@@ -12,6 +12,9 @@
       @for (card of cards; track card.id) {
         <article class="gilt-card flex flex-col items-center p-8 text-center">
           <app-photo-slot class="mb-6 w-full" [src]="card.src" [src2x]="card.src2x" [alt]="card.alt" [label]="card.title" />
+          @if (card.year) {
+            <p class="mb-2 font-sans text-sm font-semibold tracking-[0.15em] text-real-gold">{{ card.year }}</p>
+          }
           <h3 class="mb-4 font-display text-[1.75rem] leading-9 font-medium text-secondary">{{ card.title }}</h3>
           <p class="font-sans text-base leading-6 text-on-surface-variant">{{ card.text }}</p>
         </article>

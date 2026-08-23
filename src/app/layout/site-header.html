@@ -4,11 +4,14 @@
   <div
     class="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:px-8 lg:px-16"
   >
-    <a
-      href="#home"
-      class="font-display text-[1.75rem] leading-9 font-medium text-primary italic"
-    >
-      V&amp;D
+    <a href="#home" class="inline-flex shrink-0 items-center" aria-label="Вероника и Дмитрий">
+      <img
+        src="/assets/logo.svg"
+        width="89"
+        height="48"
+        alt="Вероника и Дмитрий"
+        class="h-12 w-auto"
+      />
     </a>
 
     <nav class="hidden h-full items-center gap-6 md:flex" aria-label="Разделы приглашения">
@@ -34,7 +37,7 @@
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
         href="#rsvp"
       >
-        RSVP
+        Подтверждение
       </a>
     </nav>
 
@@ -80,7 +83,7 @@
           <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#details" (click)="closeMenu()">Детали</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#rsvp" (click)="closeMenu()">RSVP</a>
+          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#rsvp" (click)="closeMenu()">Подтверждение</a>
         </li>
       </ul>
     </nav>

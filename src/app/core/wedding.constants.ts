@@ -111,20 +111,14 @@ export interface StoryCard {
   readonly src: string;
   readonly src2x: string;
   readonly alt: string;
+  readonly year?: string;
 }
 
 export const STORY_CARDS: readonly StoryCard[] = [
   {
-    id: 'meeting',
-    title: 'Знакомство',
-    text: 'Все началось со случайной встречи в уютной кофейне, которая изменила нашу жизнь навсегда.',
-    src: '/assets/photos/story-meeting.jpg',
-    src2x: '/assets/photos/story-meeting@2x.jpg',
-    alt: 'Знакомство Вероники и Дмитрия',
-  },
-  {
     id: 'first-date',
     title: 'Первое свидание',
+    year: '2022',
     text: 'Долгие разговоры под звездным небом и осознание того, что мы нашли друг друга.',
     src: '/assets/photos/story-first-date.jpg',
     src2x: '/assets/photos/story-first-date@2x.jpg',
@@ -133,14 +127,25 @@ export const STORY_CARDS: readonly StoryCard[] = [
   {
     id: 'travel',
     title: 'Путешествия',
+    year: '2023',
     text: 'Сотни километров вместе, новые города и страны, где каждый момент был наполнен счастьем.',
     src: '/assets/photos/story-travel.jpg',
     src2x: '/assets/photos/story-travel@2x.jpg',
     alt: 'Путешествия Вероники и Дмитрия',
   },
   {
+    id: 'cinema',
+    title: 'Первый поход в кино',
+    year: '2025',
+    text: 'Первый совместный сеанс: тёмный зал, большой экран и ощущение, что своя история уже началась.',
+    src: '/assets/photos/story-cinema.jpg',
+    src2x: '/assets/photos/story-cinema@2x.jpg',
+    alt: 'Первый поход в кино Вероники и Дмитрия, 2025',
+  },
+  {
     id: 'proposal',
     title: 'Предложение',
+    year: '2026',
     text: "Тот самый день, когда 'Я' и 'Ты' окончательно стали 'Мы'. Идеальный момент, идеальное 'Да'.",
     src: '/assets/photos/story-proposal.jpg',
     src2x: '/assets/photos/story-proposal@2x.jpg',
@@ -155,17 +160,20 @@ export interface LocationCard {
   readonly icon: string;
 }
 
-export const LOCATION_CARDS: readonly LocationCard[] = [
-  {
-    id: 'registry',
-    title: 'Регистрация',
-    lines: ['Красный проспект 68'],
-    icon: 'account_balance',
-  },
-  {
-    id: 'banquet',
-    title: 'Банкет',
-    lines: ['Парк-отель SLUMO', 'ул. Новая Заря, 53А'],
-    icon: 'restaurant',
-  },
-];
+const REGISTRY_LOCATION: LocationCard = {
+  id: 'registry',
+  title: 'Регистрация',
+  lines: ['Красный проспект 68'],
+  icon: 'account_balance',
+};
+
+const BANQUET_LOCATION: LocationCard = {
+  id: 'banquet',
+  title: 'Банкет',
+  lines: ['Отель Slumo', 'ул. Новая Заря, 53А'],
+  icon: 'restaurant',
+};
+
+export function locationCards(isFull: boolean): readonly LocationCard[] {
+  return isFull ? [REGISTRY_LOCATION, BANQUET_LOCATION] : [BANQUET_LOCATION];
+}

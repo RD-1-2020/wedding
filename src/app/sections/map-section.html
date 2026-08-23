@@ -7,8 +7,11 @@
       Локации
     </h2>
 
-    <div class="mb-10 grid w-full max-w-4xl grid-cols-1 gap-8 text-center md:grid-cols-2">
-      @for (place of locations; track place.id) {
+    <div
+      class="mb-10 grid w-full max-w-4xl grid-cols-1 gap-8 text-center"
+      [class.md:grid-cols-2]="locations().length > 1"
+    >
+      @for (place of locations(); track place.id) {
         <article class="gilt-card p-8">
           <span class="material-symbols-outlined mb-4 text-4xl text-secondary" aria-hidden="true">{{ place.icon }}</span>
           <h3 class="mb-2 font-display text-[1.75rem] leading-9 font-medium text-primary">{{ place.title }}</h3>

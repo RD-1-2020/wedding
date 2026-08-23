@@ -1,4 +1,11 @@
-import { countdownParts, googleCalendarUrl, scheduleItems, STORY_CARDS, weddingStart } from './wedding.constants';
+import {
+  countdownParts,
+  googleCalendarUrl,
+  locationCards,
+  scheduleItems,
+  STORY_CARDS,
+  weddingStart,
+} from './wedding.constants';
 
 describe('wedding.constants', () => {
   it('does not include the ceremony in the short schedule', () => {
@@ -27,13 +34,27 @@ describe('wedding.constants', () => {
     expect(captions).not.toMatch(/12:00|14:00|17:00|23:00|фуршет|ЗАГС/i);
   });
 
-  it('lists four story cards from the stitch mock', () => {
+  it('lists four story cards with cinema in 2025 and no first-meeting card', () => {
     expect(STORY_CARDS.map((card) => card.title)).toEqual([
-      'Знакомство',
       'Первое свидание',
       'Путешествия',
+      'Первый поход в кино',
       'Предложение',
     ]);
+    const cinema = STORY_CARDS.find((card) => card.id === 'cinema');
+    expect(cinema?.year).toBe('2025');
+    expect(cinema?.src).toContain('story-cinema.jpg');
+    expect(STORY_CARDS.some((card) => card.id === 'meeting' || card.title === 'Знакомство')).toBe(
+      false,
+    );
+    expect(STORY_CARDS.some((card) => card.src.includes('story-meeting'))).toBe(false);
+  });
+
+  it('hides the registry location unless the invitation is full', () => {
+    expect(locationCards(false).map((card) => card.title)).toEqual(['Банкет']);
+    expect(locationCards(true).map((card) => card.title)).toEqual(['Регистрация', 'Банкет']);
+    expect(locationCards(true)[0].lines).toContain('Красный проспект 68');
+    expect(locationCards(false)[0].lines).toEqual(['Отель Slumo', 'ул. Новая Заря, 53А']);
   });
 
   it('builds Google Calendar links for both modes', () => {
