@@ -1,0 +1,91 @@
+@use '@angular/material' as mat;
+
+html {
+  color-scheme: light;
+
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$rose-palette,
+        tertiary: mat.$spring-green-palette,
+        theme-type: light,
+      ),
+      typography: (
+        plain-family: Inter,
+        brand-family: 'Playfair Display',
+        bold-weight: 600,
+        medium-weight: 500,
+        regular-weight: 400,
+      ),
+      density: 0,
+    ),
+    $overrides: (
+      primary: #7b5455,
+      on-primary: #ffffff,
+      primary-container: #f4c2c2,
+      on-primary-container: #734e4e,
+      inverse-primary: #ecbaba,
+      secondary: #735c00,
+      on-secondary: #ffffff,
+      secondary-container: #fed65b,
+      on-secondary-container: #745c00,
+      tertiary: #486456,
+      on-tertiary: #ffffff,
+      tertiary-container: #b6d5c3,
+      on-tertiary-container: #415d4f,
+      error: #ba1a1a,
+      on-error: #ffffff,
+      error-container: #ffdad6,
+      on-error-container: #93000a,
+      surface: #fff8f7,
+      surface-dim: #e1d8d7,
+      surface-bright: #fff8f7,
+      surface-container-lowest: #ffffff,
+      surface-container-low: #fbf1f1,
+      surface-container: #f5eceb,
+      surface-container-high: #efe6e5,
+      surface-container-highest: #e9e0e0,
+      surface-variant: #e9e0e0,
+      on-surface: #1f1b1b,
+      on-surface-variant: #504444,
+      background: #fff8f7,
+      on-background: #1f1b1b,
+      outline: #827473,
+      outline-variant: #d4c2c2,
+      inverse-surface: #342f2f,
+      inverse-on-surface: #f8efee,
+      surface-tint: #7b5455,
+    )
+  );
+
+  @include mat.strong-focus-indicators();
+  @include mat.strong-focus-indicators-theme(#d4af37);
+
+  @include mat.card-overrides(
+    (
+      elevated-container-color: #fbf9f7,
+      elevated-container-shape: 8px,
+      outlined-container-shape: 8px,
+    )
+  );
+
+  @include mat.form-field-overrides(
+    (
+      outlined-focus-outline-color: #d4af37,
+      outlined-caret-color: #d4af37,
+      outlined-focus-label-text-color: #735c00,
+    )
+  );
+
+  @include mat.button-overrides(
+    (
+      filled-container-color: #735c00,
+      filled-label-text-color: #ffffff,
+      tonal-container-color: #f4c2c2,
+      tonal-label-text-color: #1b1c1b,
+      outlined-outline-color: #d4af37,
+      outlined-outline-width: 1.5px,
+      outlined-label-text-color: #1b1c1b,
+    )
+  );
+}

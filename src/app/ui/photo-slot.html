@@ -1,0 +1,15 @@
+<div class="photo-slot" [class.photo-slot--stub]="failed()">
+  @if (!failed()) {
+    <img
+      [src]="src()"
+      [srcset]="src() + ' 1x, ' + src2x() + ' 2x'"
+      width="512"
+      height="512"
+      [alt]="alt()"
+      (error)="failed.set(true)"
+    />
+  } @else {
+    <span class="material-symbols-outlined text-4xl text-outline" aria-hidden="true">photo_camera</span>
+    <p class="px-4 text-center font-sans text-sm text-on-surface-variant">{{ label() }}</p>
+  }
+</div>

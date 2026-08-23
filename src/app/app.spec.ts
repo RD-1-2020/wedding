@@ -26,5 +26,13 @@ describe('App', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.textContent).toContain('Вероника');
     expect(compiled.textContent).toContain('Дмитрий');
+    expect(compiled.textContent).toContain('Наша история');
+    expect(compiled.textContent).toContain('Знакомство');
+    expect(compiled.textContent).toContain('Программа дня');
+    expect(compiled.textContent).toContain('Для гостей');
+    expect(compiled.querySelector('#story')).toBeTruthy();
+    expect(compiled.querySelector('#program')).toBeTruthy();
+    expect(compiled.querySelector('#details')).toBeTruthy();
+    expect(compiled.querySelector('#rsvp')).toBeTruthy();
   });
 });

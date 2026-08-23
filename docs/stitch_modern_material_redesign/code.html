@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="ru" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Вероника и Дмитрий - Приглашение на свадьбу</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#afcebc",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-container-high": "#efe6e5",
+                        "primary-fixed": "#ffdad9",
+                        "surface-bright": "#fff8f7",
+                        "secondary": "#735c00",
+                        "on-background": "#1f1b1b",
+                        "surface-warm": "#FBF9F7",
+                        "on-secondary-fixed": "#241a00",
+                        "background": "#fff8f7",
+                        "powder-pink": "#F4C2C2",
+                        "surface-tint": "#7b5455",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f5eceb",
+                        "secondary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#f8efee",
+                        "on-tertiary-container": "#415d4f",
+                        "surface-variant": "#e9e0e0",
+                        "surface-container-highest": "#e9e0e0",
+                        "on-tertiary-fixed": "#042015",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#613d3e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#745c00",
+                        "inverse-primary": "#ecbaba",
+                        "on-primary-fixed": "#2f1314",
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#fbf1f1",
+                        "outline": "#827473",
+                        "primary-fixed-dim": "#ecbaba",
+                        "real-gold": "#D4AF37",
+                        "neon-glow": "#FFF0F5",
+                        "inverse-surface": "#342f2f",
+                        "charcoal-text": "#1B1C1B",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#486456",
+                        "primary-container": "#f4c2c2",
+                        "surface": "#fff8f7",
+                        "surface-dim": "#e1d8d7",
+                        "error": "#ba1a1a",
+                        "primary": "#7b5455",
+                        "on-surface-variant": "#504444",
+                        "outline-variant": "#d4c2c2",
+                        "tertiary-fixed": "#caead7",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#1f1b1b",
+                        "on-primary-container": "#734e4e",
+                        "on-tertiary-fixed-variant": "#314c3f",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b6d5c3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter-desktop": "24px",
+                        "section-gap": "120px",
+                        "base": "8px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "neon-invitation": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "neon-invitation": ["48px", {"lineHeight": "56px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-text-shadow {
+            text-shadow: 0 0 5px theme('colors.neon-glow'), 0 0 10px theme('colors.neon-glow'), 0 0 20px theme('colors.powder-pink'), 0 0 40px theme('colors.powder-pink');
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopAppBar -->
+<header class="bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md font-headline-md text-headline-md docked full-width top-0 sticky z-50 border-b border-powder-pink/30 flat no shadows transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-16 md:px-margin-mobile">
+<div class="font-headline-md text-headline-md italic text-primary dark:text-primary-fixed">V&amp;D</div>
+<nav class="hidden md:flex gap-gutter-desktop items-center h-full">
+<a class="font-label-lg text-label-lg text-secondary dark:text-secondary-fixed-dim font-bold border-b-2 border-secondary pb-1 h-full flex items-center hover:bg-powder-pink/10 px-2" href="#story">История</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors h-full flex items-center hover:bg-powder-pink/10 px-2" href="#program">Программа</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors h-full flex items-center hover:bg-powder-pink/10 px-2" href="#details">Детали</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors h-full flex items-center hover:bg-powder-pink/10 px-2" href="#rsvp">RSVP</a>
+</nav>
+<button class="text-primary hover:text-primary-container transition-colors flex items-center justify-center p-2 rounded-full hover:bg-powder-pink/20" title="Добавить в Google Календарь">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<main class="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden py-20" id="home">
+<!-- Background Image Placeholder -->
+<div class="absolute inset-0 z-0 bg-surface-variant">
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-surface/40 to-primary/30 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-powder-pink/10 mix-blend-overlay"></div>
+</div>
+<!-- Content -->
+<div class="relative z-10 flex flex-col items-center text-center px-margin-mobile md:px-margin-desktop w-full max-w-3xl mx-auto space-y-base">
+<p class="font-label-lg text-label-lg text-real-gold uppercase tracking-widest mb-4 opacity-90 drop-shadow-md">Приглашение на свадьбу</p>
+<h1 class="font-neon-invitation text-neon-invitation text-neon-glow neon-text-shadow mb-6">Вероника и Дмитрий</h1>
+<p class="font-headline-lg text-headline-lg text-real-gold opacity-90 drop-shadow-md mb-8">26 декабря 2026</p>
+<div class="w-24 h-px bg-real-gold/50 mb-12"></div>
+<p class="font-label-lg text-label-lg text-surface-bright uppercase tracking-widest mb-6 opacity-80 drop-shadow-md">До начала праздника</p>
+<!-- Countdown Timer -->
+<div class="flex gap-4 md:gap-gutter-desktop flex-wrap justify-center">
+<div class="bg-surface-bright/10 backdrop-blur-md border border-powder-pink/30 rounded-lg p-4 flex flex-col items-center min-w-[80px] md:min-w-[100px] shadow-[0_4px_20px_rgba(244,194,194,0.15)]">
+<span class="font-label-md text-label-md text-surface-bright uppercase mb-2 opacity-90 tracking-wider">Дни</span>
+<span class="font-headline-md text-headline-md text-real-gold">125</span>
+</div>
+<div class="bg-surface-bright/10 backdrop-blur-md border border-powder-pink/30 rounded-lg p-4 flex flex-col items-center min-w-[80px] md:min-w-[100px] shadow-[0_4px_20px_rgba(244,194,194,0.15)]">
+<span class="font-label-md text-label-md text-surface-bright uppercase mb-2 opacity-90 tracking-wider">Часы</span>
+<span class="font-headline-md text-headline-md text-real-gold">14</span>
+</div>
+<div class="bg-surface-bright/10 backdrop-blur-md border border-powder-pink/30 rounded-lg p-4 flex flex-col items-center min-w-[80px] md:min-w-[100px] shadow-[0_4px_20px_rgba(244,194,194,0.15)]">
+<span class="font-label-md text-label-md text-surface-bright uppercase mb-2 opacity-90 tracking-wider">Минуты</span>
+<span class="font-headline-md text-headline-md text-real-gold">34</span>
+</div>
+<div class="bg-surface-bright/10 backdrop-blur-md border border-powder-pink/30 rounded-lg p-4 flex flex-col items-center min-w-[80px] md:min-w-[100px] shadow-[0_4px_20px_rgba(244,194,194,0.15)]">
+<span class="font-label-md text-label-md text-surface-bright uppercase mb-2 opacity-90 tracking-wider">Секунды</span>
+<span class="font-headline-md text-headline-md text-real-gold">45</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Our Story Section -->
+<section class="py-12 bg-surface w-full flex flex-col items-center">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<p class="font-headline-md text-primary italic mb-4">Дорогие наши родные и близкие!</p>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+      Мы будем бесконечно рады видеть вас на нашем празднике любви. Ваше присутствие — самый ценный подарок для нас. Приходите к нам, мы вас очень ждём!
+    </p>
+<div class="w-16 h-px bg-real-gold/30 mx-auto mt-8"></div>
+</div>
+</section><section class="py-section-gap bg-surface w-full flex flex-col items-center" id="story">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Наша история</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+<div class="bg-surface-container rounded-xl p-8 border border-powder-pink/20 shadow-sm flex flex-col items-center text-center">
+<div class="w-full aspect-square bg-surface-variant rounded-lg mb-6 flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-outline">photo_camera</span>
+</div>
+<h3 class="font-headline-md text-secondary mb-4">Знакомство</h3>
+<p class="font-body-md text-on-surface-variant">Все началось со случайной встречи в уютной кофейне, которая изменила нашу жизнь навсегда.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-8 border border-powder-pink/20 shadow-sm flex flex-col items-center text-center">
+<div class="w-full aspect-square bg-surface-variant rounded-lg mb-6 flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-outline">photo_camera</span>
+</div>
+<h3 class="font-headline-md text-secondary mb-4">Первое свидание</h3>
+<p class="font-body-md text-on-surface-variant">Долгие разговоры под звездным небом и осознание того, что мы нашли друг друга.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-8 border border-powder-pink/20 shadow-sm flex flex-col items-center text-center">
+<div class="w-full aspect-square bg-surface-variant rounded-lg mb-6 flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-outline">photo_camera</span>
+</div>
+<h3 class="font-headline-md text-secondary mb-4">Путешествия</h3>
+<p class="font-body-md text-on-surface-variant">Сотни километров вместе, новые города и страны, где каждый момент был наполнен счастьем.</p>
+</div>
+<div class="bg-surface-container rounded-xl p-8 border border-powder-pink/20 shadow-sm flex flex-col items-center text-center">
+<div class="w-full aspect-square bg-surface-variant rounded-lg mb-6 flex items-center justify-center border-2 border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-4xl text-outline">photo_camera</span>
+</div>
+<h3 class="font-headline-md text-secondary mb-4">Предложение</h3>
+<p class="font-body-md text-on-surface-variant">Тот самый день, когда 'Я' и 'Ты' окончательно стали 'Мы'. Идеальный момент, идеальное 'Да'.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Program Section -->
+<section class="py-section-gap bg-surface-container-low w-full flex flex-col items-center text-center" id="program">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Программа дня</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                Мы подготовили для вас особенный вечер, наполненный светом, музыкой и теплыми моментами. Присоединяйтесь к нам, чтобы разделить эти волшебные часы.
+            </p>
+<div class="flex flex-col gap-8 items-center relative">
+<div class="absolute left-1/2 top-0 bottom-0 w-px bg-real-gold/30 hidden md:block"></div>
+<div class="flex flex-col md:flex-row items-center w-full gap-4 md:gap-8 z-10">
+<div class="md:w-1/2 flex justify-end">
+<p class="font-headline-md text-headline-md text-secondary">14:30</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-real-gold hidden md:block"></div>
+<div class="md:w-1/2 flex flex-col items-start text-left">
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Торжественная регистрация</p>
+<p class="font-body-md text-on-surface-variant">Красный проспект 68</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center w-full gap-4 md:gap-8 z-10">
+<div class="md:w-1/2 flex justify-end">
+<p class="font-headline-md text-headline-md text-secondary">15:30</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-real-gold hidden md:block"></div>
+<div class="md:w-1/2 flex flex-col items-start text-left">
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Праздничный банкет</p>
+<p class="font-body-md text-on-surface-variant">Новая Заря 228</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center w-full gap-4 md:gap-8 z-10">
+<div class="md:w-1/2 flex justify-end">
+<p class="font-headline-md text-headline-md text-secondary">21:30</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-real-gold hidden md:block"></div>
+<div class="md:w-1/2 flex flex-col items-start text-left">
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Торт</p>
+<p class="font-body-md text-on-surface-variant">Сладкий момент вечера</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center w-full gap-4 md:gap-8 z-10">
+<div class="md:w-1/2 flex justify-end">
+<p class="font-headline-md text-headline-md text-secondary">22:30</p>
+</div>
+<div class="w-4 h-4 rounded-full bg-real-gold hidden md:block"></div>
+<div class="md:w-1/2 flex flex-col items-start text-left">
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Окончание праздничного дня</p>
+<p class="font-body-md text-on-surface-variant">До новых встреч!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Details Section -->
+<section class="py-section-gap bg-surface w-full flex flex-col items-center" id="details">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Для гостей</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-4xl">
+<div class="bg-surface-container-low p-8 rounded-xl border border-powder-pink/30">
+<h3 class="font-headline-md text-secondary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">card_giftcard</span>Подарки</h3>
+<p class="font-body-md text-on-surface-variant">
+    Мы понимаем традицию дарить цветы, но будем рады любой другой альтернативе, так как не сможем насладиться их красотой в полной мере. Ваше внимание — главная ценность.
+  </p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-powder-pink/30">
+<h3 class="font-headline-md text-secondary mb-4 flex items-center gap-2"><span class="material-symbols-outlined">apparel</span>Дресс-код</h3>
+<p class="font-body-md text-on-surface-variant">
+    Мы будем признательны, если вы поддержите атмосферу нашего праздника своим нарядом. Дресс-код — праздничный вид и ваше прекрасное настроение.
+  </p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-powder-pink/30">
+<h3 class="font-headline-md text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">checkroom</span> Гардероб
+        </h3>
+<p class="font-body-md text-on-surface-variant mb-4">Переобуться можно на первом этаже.</p>
+<p class="font-body-md text-on-surface-variant">Верхнюю одежду, пожалуйста, оставляйте перед входом в зал.</p>
+<p class="font-body-md text-on-surface-variant mt-4">Зал для торжества находится на втором этаже.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl border border-powder-pink/30 md:col-span-2">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<div class="w-24 h-24 rounded-full bg-powder-pink/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary">mic_external_on</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h3 class="font-headline-md text-secondary mb-2">Ведущая Марина</h3>
+<p class="font-body-md text-on-surface-variant mb-4">По всем вопросам программы и сюрпризов вы можете связаться с нашей замечательной ведущей.</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<a class="font-label-lg text-primary flex items-center gap-1 hover:text-secondary transition-colors" href="tel:+89130087117">
+<span class="material-symbols-outlined text-lg">call</span> +8 (913) 008-71-17
+        </a>
+<div class="flex gap-4">
+<a class="font-label-lg text-secondary hover:underline" href="#">Telegram</a>
+<a class="font-label-lg text-secondary hover:underline" href="#">VK</a>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+<!-- RSVP Section -->
+<section class="py-section-gap bg-surface-container-low w-full flex flex-col items-center" id="rsvp">
+<div class="max-w-xl mx-auto px-margin-mobile w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8 text-center">Подтверждение присутствия</h2>
+<form class="bg-surface p-8 rounded-xl border border-powder-pink/30 shadow-sm flex flex-col gap-6 w-full">
+<div>
+<label class="block font-label-lg text-on-surface mb-2" for="firstName">Имя</label>
+<input class="w-full rounded-md border-outline-variant bg-surface-container focus:border-primary focus:ring-primary text-on-surface" id="firstName" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-lg text-on-surface mb-2" for="lastName">Фамилия</label>
+<input class="w-full rounded-md border-outline-variant bg-surface-container focus:border-primary focus:ring-primary text-on-surface" id="lastName" required="" type="text"/>
+</div>
+<div class="flex items-center justify-between">
+<label class="font-body-md text-on-surface" for="partner">Буду с парой</label>
+<input class="rounded text-primary focus:ring-primary w-5 h-5 border-outline-variant bg-surface-container" id="partner" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between">
+<label class="font-body-md text-on-surface" for="child">Буду с ребенком</label>
+<input class="rounded text-primary focus:ring-primary w-5 h-5 border-outline-variant bg-surface-container" id="child" type="checkbox"/>
+</div>
+<div>
+<label class="block font-label-lg text-on-surface mb-2" for="additional">Дополнительная информация (аллергии, предпочтения)</label>
+<textarea class="w-full rounded-md border-outline-variant bg-surface-container focus:border-primary focus:ring-primary text-on-surface" id="additional" rows="3"></textarea>
+</div>
+<button class="bg-secondary text-on-secondary py-3 px-6 rounded-md font-label-lg uppercase tracking-wider hover:bg-secondary/90 transition-colors mt-4" type="submit">Отправить</button>
+</form>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-section-gap bg-surface w-full flex flex-col items-center">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center w-full">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Локации</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl text-center">
+<div class="bg-surface-container p-8 rounded-xl border border-powder-pink/20">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">account_balance</span>
+<h3 class="font-headline-md text-primary mb-2">Регистрация</h3>
+<p class="font-body-lg text-on-surface">Красный проспект 68</p>
+</div>
+<div class="bg-surface-container p-8 rounded-xl border border-powder-pink/20">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">restaurant</span>
+<h3 class="font-headline-md text-primary mb-2">Банкет</h3>
+<p class="font-body-lg text-on-surface">Ресторан 'Сибирь'</p>
+<p class="font-body-md text-on-surface-variant">ул. Новая Заря 228</p>
+</div>
+</div>
+<div class="w-16 h-0.5 bg-real-gold mx-auto mt-12"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container full-width py-12 border-t border-powder-pink/20 flat transition-opacity duration-200">
+<div class="flex flex-col items-center justify-center space-y-4 w-full px-margin-desktop mx-auto max-w-container-max">
+<div class="font-headline-md text-headline-md text-primary">V&amp;D</div>
+<div class="flex gap-gutter-desktop">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary" href="#">Связаться с нами</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary" href="#">Политика конфиденциальности</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface opacity-60">© 2026 Veronika &amp; Dmitry. Created with love.</p>
+</div>
+</footer>
+</body></html>

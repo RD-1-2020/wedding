@@ -1,30 +1,16 @@
 import { Component, inject, linkedSignal, signal } from '@angular/core';
-import { HlmAlert, HlmAlertDescription } from '@spartan-ng/helm/alert';
-import { HlmButton } from '@spartan-ng/helm/button';
-import { HlmCard, HlmCardContent } from '@spartan-ng/helm/card';
-import { HlmField, HlmFieldGroup, HlmFieldLabel } from '@spartan-ng/helm/field';
-import { HlmInput } from '@spartan-ng/helm/input';
-import { HlmSwitch } from '@spartan-ng/helm/switch';
-import { HlmTextarea } from '@spartan-ng/helm/textarea';
+import { MatButton } from '@angular/material/button';
+import { MatCard, MatCardContent } from '@angular/material/card';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { GuestQuery } from '../core/guest-query';
 import { RsvpApi } from '../core/rsvp-api';
 import { RsvpStatus } from '../core/rsvp.types';
 
 @Component({
   selector: 'app-rsvp-section',
-  imports: [
-    HlmAlert,
-    HlmAlertDescription,
-    HlmButton,
-    HlmCard,
-    HlmCardContent,
-    HlmField,
-    HlmFieldGroup,
-    HlmFieldLabel,
-    HlmInput,
-    HlmSwitch,
-    HlmTextarea,
-  ],
+  imports: [MatButton, MatCard, MatCardContent, MatFormField, MatInput, MatLabel, MatSlideToggle],
   templateUrl: './rsvp-section.html',
 })
 export class RsvpSection {

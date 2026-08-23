@@ -51,6 +51,8 @@ One rework loop if tester fails. Then stop and report remaining gaps as links in
 ## Project (from the user)
 
 - Angular **22** wedding site for Veronika and Dmitry, date **26.12.26**
-- Palette: dusty rose, powder, white, gold
-- UI kit: **shadcn/ui + Tailwind**
-- No backend unless the user asks for one
+- Brand **Ethereal Union**; visual source: `docs/DESIGN.md` + `docs/stitch_modern_material_redesign/`
+- Palette: powder-pink `#F4C2C2`, real gold `#D4AF37` (not mustard `#C6A15B`), charcoal `#1B1C1B`, surface-warm `#FBF9F7`
+- UI kit: **Angular Material (Material 3)**; Playfair Display + Inter; Material Symbols Outlined
+- No shadcn/ui, no Spartan
+- No extra backend unless the user asks; Cloud Run RSVP is already requested

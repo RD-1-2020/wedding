@@ -25,6 +25,7 @@ export interface ScheduleItem {
   readonly id: string;
   readonly title: string;
   readonly time: string;
+  readonly caption: string;
 }
 
 export function weddingStart(isFull: boolean): Date {
@@ -34,13 +35,36 @@ export function weddingStart(isFull: boolean): Date {
 
 export function scheduleItems(isFull: boolean): readonly ScheduleItem[] {
   const shared: readonly ScheduleItem[] = [
-    { id: 'banquet', title: 'Праздничный банкет', time: '15:30' },
-    { id: 'cake', title: 'торт', time: '21:30' },
-    { id: 'end', title: 'Окончание праздничного дня', time: '22:30' },
+    {
+      id: 'banquet',
+      title: 'Праздничный банкет',
+      time: '15:30',
+      caption: 'Новая Заря, 53А',
+    },
+    {
+      id: 'cake',
+      title: 'Торт',
+      time: '21:30',
+      caption: 'Сладкий момент вечера',
+    },
+    {
+      id: 'end',
+      title: 'Окончание праздничного дня',
+      time: '22:30',
+      caption: 'До новых встреч!',
+    },
   ];
 
   if (isFull) {
-    return [{ id: 'ceremony', title: 'Торжественная регистрация', time: '14:30' }, ...shared];
+    return [
+      {
+        id: 'ceremony',
+        title: 'Торжественная регистрация',
+        time: '14:30',
+        caption: 'Красный проспект 68',
+      },
+      ...shared,
+    ];
   }
 
   return shared;
@@ -50,7 +74,10 @@ export function googleCalendarUrl(isFull: boolean): string {
   const start = isFull ? '143000' : '153000';
   const dates = `20261226T${start}/20261226T223000`;
   const text = encodeURIComponent('Свадьба Вероники и Дмитрия');
-  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}`;
+  const location = isFull ? encodeURIComponent('г. Новосибирск, Красный проспект 68') :
+    encodeURIComponent('г. Новосибирск, ул. Новая Заря, 53А');
+  const details = encodeURIComponent(scheduleItems(isFull).map((place => place.title + '' + place.time)).join('\n'));
+  return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}&location=${location}&details=${details}`;
 }
 
 export interface CountdownParts {
@@ -77,34 +104,68 @@ export function countdownParts(nowMs: number, target: Date): CountdownParts {
   };
 }
 
-export interface LoveMoment {
-  readonly year: string;
-  readonly caption: string;
+export interface StoryCard {
+  readonly id: string;
+  readonly title: string;
+  readonly text: string;
   readonly src: string;
   readonly src2x: string;
   readonly alt: string;
 }
 
-export const LOVE_MOMENTS: readonly LoveMoment[] = [
+export const STORY_CARDS: readonly StoryCard[] = [
   {
-    year: '2022',
-    caption: 'Первое свидание',
-    src: '/assets/photos/love-2022-first-date.jpg',
-    src2x: '/assets/photos/love-2022-first-date@2x.jpg',
-    alt: '2022, первое свидание Вероники и Дмитрия',
+    id: 'meeting',
+    title: 'Знакомство',
+    text: 'Все началось со случайной встречи в уютной кофейне, которая изменила нашу жизнь навсегда.',
+    src: '/assets/photos/story-meeting.jpg',
+    src2x: '/assets/photos/story-meeting@2x.jpg',
+    alt: 'Знакомство Вероники и Дмитрия',
   },
   {
-    year: '2023',
-    caption: 'Первое совместное путешествие',
-    src: '/assets/photos/love-2023-first-trip.jpg',
-    src2x: '/assets/photos/love-2023-first-trip@2x.jpg',
-    alt: '2023, первое совместное путешествие Вероники и Дмитрия',
+    id: 'first-date',
+    title: 'Первое свидание',
+    text: 'Долгие разговоры под звездным небом и осознание того, что мы нашли друг друга.',
+    src: '/assets/photos/story-first-date.jpg',
+    src2x: '/assets/photos/story-first-date@2x.jpg',
+    alt: 'Первое свидание Вероники и Дмитрия',
   },
   {
-    year: '2026',
-    caption: 'Предложение',
-    src: '/assets/photos/love-2026-proposal.jpg',
-    src2x: '/assets/photos/love-2026-proposal@2x.jpg',
-    alt: '2026, предложение руки и сердца',
+    id: 'travel',
+    title: 'Путешествия',
+    text: 'Сотни километров вместе, новые города и страны, где каждый момент был наполнен счастьем.',
+    src: '/assets/photos/story-travel.jpg',
+    src2x: '/assets/photos/story-travel@2x.jpg',
+    alt: 'Путешествия Вероники и Дмитрия',
+  },
+  {
+    id: 'proposal',
+    title: 'Предложение',
+    text: "Тот самый день, когда 'Я' и 'Ты' окончательно стали 'Мы'. Идеальный момент, идеальное 'Да'.",
+    src: '/assets/photos/story-proposal.jpg',
+    src2x: '/assets/photos/story-proposal@2x.jpg',
+    alt: 'Предложение руки и сердца',
+  },
+];
+
+export interface LocationCard {
+  readonly id: string;
+  readonly title: string;
+  readonly lines: readonly string[];
+  readonly icon: string;
+}
+
+export const LOCATION_CARDS: readonly LocationCard[] = [
+  {
+    id: 'registry',
+    title: 'Регистрация',
+    lines: ['Красный проспект 68'],
+    icon: 'account_balance',
+  },
+  {
+    id: 'banquet',
+    title: 'Банкет',
+    lines: ['Парк-отель SLUMO', 'ул. Новая Заря, 53А'],
+    icon: 'restaurant',
   },
 ];
