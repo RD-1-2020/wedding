@@ -34,7 +34,7 @@
   --color-on-primary: #ffffff;
   --color-primary-container: #f4c2c2;
   --color-on-primary-container: #734e4e;
-  --color-secondary: #735c00;
+  --color-secondary:  #967c61;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #fed65b;
   --color-tertiary: #486456;
@@ -68,7 +68,7 @@
   --primary-foreground: #ffffff;
   --primary-container: #f4c2c2;
   --on-primary-container: #734e4e;
-  --secondary: #735c00;
+  --secondary: #967c61;
   --secondary-foreground: #ffffff;
   --secondary-container: #fed65b;
   --tertiary: #486456;
@@ -134,10 +134,6 @@
     line-height: 1.15;
     letter-spacing: 0.05em;
     color: var(--real-gold);
-    text-shadow:
-      0 0 10px color-mix(in srgb, var(--neon-glow) 60%, transparent),
-      0 0 20px color-mix(in srgb, var(--neon-glow) 60%, transparent),
-      0 0 28px color-mix(in srgb, var(--powder-pink) 45%, transparent);
   }
 
   .gilt-card {
@@ -175,11 +171,10 @@
 
   .countdown-tile {
     display: flex;
-    min-width: 5rem;
+    min-width: 3rem;
     flex-direction: column;
     align-items: center;
-    border: 1px solid color-mix(in srgb, var(--powder-pink) 30%, transparent);
-    border-radius: 8px;
+    border-radius: 12px;
     background: color-mix(in srgb, #fff8f7 10%, transparent);
     padding: 1rem 0.75rem;
     box-shadow: 0 4px 20px rgb(244 194 194 / 15%);
