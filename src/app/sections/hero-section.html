@@ -1,6 +1,6 @@
 <section
   id="home"
-  class="relative isolate flex min-h-[100dvh] w-full min-w-0 flex-col items-center justify-center overflow-hidden py-20"
+  class="relative isolate flex min-h-[calc(100dvh-4rem)] w-full min-w-0 flex-col overflow-hidden"
   aria-labelledby="hero-heading"
 >
   <picture class="absolute inset-0 -z-10 block h-full w-full">
@@ -11,7 +11,7 @@
       height="1080"
     />
     <img
-      class="h-full w-full object-cover object-center"
+      class="h-full w-full object-cover object-[center_40%]"
       ngSrc="/assets/photos/hero-portrait.jpg"
       srcset="/assets/photos/hero-portrait.jpg 1x, /assets/photos/hero-portrait@2x.jpg 2x"
       width="768"
@@ -20,46 +20,47 @@
     />
   </picture>
 
-  <div
-    class="absolute inset-0 -z-10 bg-gradient-to-t from-primary/80 via-surface/40 to-primary/30 mix-blend-multiply"
-    aria-hidden="true"
-  ></div>
-  <div class="absolute inset-0 -z-10 bg-powder-pink/10 mix-blend-overlay" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
 
-  <div class="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-4 text-center md:px-16">
-    <p class="mb-4 font-sans text-sm font-semibold tracking-[0.1em] text-real-gold uppercase drop-shadow-md">
-      Приглашение на свадьбу
-    </p>
-    <h1 id="hero-heading" class="neon-invitation mb-6">Вероника и Дмитрий</h1>
-    <p class="mb-8 font-display text-[2rem] leading-10 font-medium text-real-gold drop-shadow-md">
-      26 декабря 2026
-    </p>
-    <p class="sr-only">26.12.2026</p>
-    <div class="mb-12 h-px w-24 bg-real-gold/50" aria-hidden="true"></div>
+  <div class="relative z-10 mt-auto w-full px-4 pb-4 lg:px-0 lg:pb-0">
+    <div
+      class="hero-copy mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-5 text-center md:gap-8 md:px-12 md:py-8 lg:flex-row lg:items-end lg:justify-between lg:gap-16 lg:px-16 lg:text-left"
+    >
+      <div class="flex flex-col items-center lg:items-start">
+        <p class="hero-kicker mb-2 font-sans text-sm font-semibold tracking-[0.1em] text-real-gold uppercase">
+          Приглашение на свадьбу
+        </p>
+        <h1 id="hero-heading" class="neon-invitation mb-3 lg:whitespace-nowrap">Вероника и Дмитрий</h1>
+        <p class="hero-date mb-3 font-display text-2xl leading-8 font-medium text-real-gold md:text-[2rem] md:leading-10">
+          26 декабря 2026
+        </p>
+        <p class="sr-only">26.12.2026</p>
+        <div class="h-px w-24 bg-real-gold/50" aria-hidden="true"></div>
+      </div>
 
-    <div class="w-full" aria-live="polite">
-      <p class="mb-6 font-sans text-sm font-semibold tracking-[0.1em] text-surface-bright uppercase opacity-80">
-        До начала праздника
-      </p>
-
-      <dl class="flex flex-wrap justify-center gap-4 md:gap-6">
-        <div class="countdown-tile">
-          <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Дней</dt>
-          <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().days) }}</dd>
-        </div>
-        <div class="countdown-tile">
-          <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Часов</dt>
-          <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().hours) }}</dd>
-        </div>
-        <div class="countdown-tile">
-          <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Минут</dt>
-          <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().minutes) }}</dd>
-        </div>
-        <div class="countdown-tile">
-          <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Секунд</dt>
-          <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().seconds) }}</dd>
-        </div>
-      </dl>
+      <div class="w-full lg:w-auto" aria-live="polite">
+        <p class="hero-kicker mb-4 font-sans text-sm font-semibold tracking-[0.1em] text-surface-bright uppercase opacity-90 lg:text-right">
+          До начала праздника
+        </p>
+        <dl class="flex flex-wrap justify-center gap-3 md:gap-4 lg:justify-end">
+          <div class="countdown-tile">
+            <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Дней</dt>
+            <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().days) }}</dd>
+          </div>
+          <div class="countdown-tile">
+            <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Часов</dt>
+            <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().hours) }}</dd>
+          </div>
+          <div class="countdown-tile">
+            <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Минут</dt>
+            <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().minutes) }}</dd>
+          </div>
+          <div class="countdown-tile">
+            <dt class="mb-2 font-sans text-xs font-medium tracking-wider text-surface-bright uppercase opacity-90">Секунд</dt>
+            <dd class="font-display text-[1.75rem] leading-9 font-medium text-real-gold">{{ pad(remaining().seconds) }}</dd>
+          </div>
+        </dl>
+      </div>
     </div>
   </div>
 </section>
