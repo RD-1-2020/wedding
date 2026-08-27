@@ -14,7 +14,7 @@ export const MAP_WIDGET_SHORT =
   'https://yandex.ru/map-widget/v1/?um=constructor%3Af4b93e0707874f6aee0dfa1cfec58d744e190c9514401d4972c4993dc228893e&source=constructor';
 
 /** Cloud Run RSVP endpoint. Replace after deploy. Secrets stay on the function. */
-export const RSVP_FUNCTION_URL = 'https://wedding-rsvp-placeholder.a.run.app';
+export const RSVP_FUNCTION_URL = 'https://rsvp-250628620902.europe-west1.run.app';
 
 export const MARINA_PHONE_DISPLAY = '+8 (913) 008-71-17';
 export const MARINA_PHONE_TEL = 'tel:+89130087117';

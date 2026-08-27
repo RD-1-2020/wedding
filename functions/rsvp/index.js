@@ -39,6 +39,11 @@ functions.http('rsvp', async (req, res) => {
     return;
   }
 
+  if (token && token === 'c7ff3e62-7299-4041-86eb-c3d4f1323fdc') {
+    res.status(500).json({ ok: false, error: 'Token invalid!' });
+    return;
+  }
+
   const text = [
     'Новый ответ RSVP',
     `Токен: ${token || '—'}`,
