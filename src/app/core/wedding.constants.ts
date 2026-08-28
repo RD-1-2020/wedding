@@ -11,7 +11,7 @@ export const MAP_WIDGET_FULL =
   'https://yandex.ru/map-widget/v1/?um=constructor%3A3a9957aa19ac8f287415728f2171469275fe968f69bcb4523d89ab7652ffc348&source=constructor';
 
 export const MAP_WIDGET_SHORT =
-  'https://yandex.ru/map-widget/v1/?um=constructor%3Af4b93e0707874f6aee0dfa1cfec58d744e190c9514401d4972c4993dc228893e&source=constructor';
+  'https://yandex.ru/map-widget/v1/?um=constructor%3Af4b93e0707874f6aee0dfa1cfec58d744e190c9514401d4972c4993dc228893e&amp;source=constructor';
 
 /** Cloud Run RSVP endpoint. Replace after deploy. Secrets stay on the function. */
 export const RSVP_FUNCTION_URL = 'https://rsvp-250628620902.europe-west1.run.app';
@@ -39,19 +39,19 @@ export function scheduleItems(isFull: boolean): readonly ScheduleItem[] {
       id: 'banquet',
       title: 'Праздничный банкет',
       time: '15:30',
-      caption: 'Новая Заря, 53А',
+      caption: 'Начинаем главную веселую часть: душевные разговоры, вкусные угощения и море улыбок',
     },
     {
       id: 'cake',
-      title: 'Торт',
+      title: 'Сладкая пауза',
       time: '21:30',
-      caption: 'Сладкий момент вечера',
+      caption: 'Самая красивая и вкусная традиция нашего дня',
     },
     {
       id: 'end',
-      title: 'Окончание праздничного дня',
+      title: 'Завершение вечера',
       time: '22:30',
-      caption: 'До новых встреч!',
+      caption: 'Обнимаемся на прощание и уносим с собой самые яркие воспоминания',
     },
   ];
 
@@ -61,7 +61,8 @@ export function scheduleItems(isFull: boolean): readonly ScheduleItem[] {
         id: 'ceremony',
         title: 'Торжественная регистрация',
         time: '14:30',
-        caption: 'Красный проспект 68',
+        caption:
+          'Приглашаем вас стать свидетелями самого трогательного момента — рождения нашей семьи',
       },
       ...shared,
     ];
@@ -74,9 +75,14 @@ export function googleCalendarUrl(isFull: boolean): string {
   const start = isFull ? '143000' : '153000';
   const dates = `20261226T${start}/20261226T223000`;
   const text = encodeURIComponent('Свадьба Вероники и Дмитрия');
-  const location = isFull ? encodeURIComponent('г. Новосибирск, Красный проспект 68') :
-    encodeURIComponent('г. Новосибирск, ул. Новая Заря, 53А');
-  const details = encodeURIComponent(scheduleItems(isFull).map((place => place.title + ' - ' + place.time)).join('\n'));
+  const location = isFull
+    ? encodeURIComponent('г. Новосибирск, Красный проспект 68')
+    : encodeURIComponent('г. Новосибирск, ул. Новая Заря, 53А');
+  const details = encodeURIComponent(
+    scheduleItems(isFull)
+      .map((place) => place.title + ' - ' + place.time)
+      .join('\n'),
+  );
   return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${dates}&location=${location}&details=${details}`;
 }
 
@@ -119,7 +125,7 @@ export const STORY_CARDS: readonly StoryCard[] = [
     id: 'first-date',
     title: 'Первое свидание',
     year: '2022',
-    text: 'Долгие разговоры под звездным небом и осознание того, что мы нашли друг друга.',
+    text: 'Рабочие будни остались где-то внизу. Мы сидели на 25 этаже, смотрели на огни города и просто не могли наговориться',
     src: '/assets/photos/story-first-date.jpg',
     src2x: '/assets/photos/story-first-date@2x.jpg',
     alt: 'Первое свидание Вероники и Дмитрия',
@@ -128,7 +134,7 @@ export const STORY_CARDS: readonly StoryCard[] = [
     id: 'travel',
     title: 'Путешествия',
     year: '2023',
-    text: 'Сотни километров вместе, новые города и страны, где каждый момент был наполнен счастьем.',
+    text: 'Год, когда мы впервые увидели, как здорово открывать этот мир вместе. Когда в любой дороге тепло и уютно просто от того, кто рядом',
     src: '/assets/photos/story-travel.jpg',
     src2x: '/assets/photos/story-travel@2x.jpg',
     alt: 'Путешествия Вероники и Дмитрия',
@@ -137,7 +143,7 @@ export const STORY_CARDS: readonly StoryCard[] = [
     id: 'cinema',
     title: 'Первый поход в кино',
     year: '2025',
-    text: 'Первый совместный сеанс: тёмный зал, большой экран и ощущение, что своя история уже началась.',
+    text: 'Сами мы до кинотеатра за всё время так и не дошли. За нас всё решила экскурсия, в программу которой просто входил мультфильм',
     src: '/assets/photos/story-cinema.jpg',
     src2x: '/assets/photos/story-cinema@2x.jpg',
     alt: 'Первый поход в кино Вероники и Дмитрия, 2025',
@@ -146,7 +152,7 @@ export const STORY_CARDS: readonly StoryCard[] = [
     id: 'proposal',
     title: 'Предложение',
     year: '2026',
-    text: "Тот самый день, когда 'Я' и 'Ты' окончательно стали 'Мы'. Идеальный момент, идеальное 'Да'.",
+    text: 'Очень личный, волнительный и самый счастливый момент',
     src: '/assets/photos/story-proposal.jpg',
     src2x: '/assets/photos/story-proposal@2x.jpg',
     alt: 'Предложение руки и сердца',
@@ -163,14 +169,24 @@ export interface LocationCard {
 const REGISTRY_LOCATION: LocationCard = {
   id: 'registry',
   title: 'Регистрация',
-  lines: ['Красный проспект 68'],
+  lines: [
+    'Центральный ЗАГС',
+    '<a href="https://2gis.ru/novosibirsk/firm/141265769334771/82.917965%2C55.04151?m=82.918102%2C55.041619%2F18.63">' +
+      'Красный проспект, 68' +
+      '</a>',
+  ],
   icon: 'account_balance',
 };
-
+// TODO MAY BE LINK???
 const BANQUET_LOCATION: LocationCard = {
   id: 'banquet',
   title: 'Банкет',
-  lines: ['Отель Slumo', 'ул. Новая Заря, 53А'],
+  lines: [
+    'Отель Slumo',
+    '<a href="https://2gis.ru/novosibirsk/firm/70000001029865759/82.945071%2C55.085941?m=82.937043%2C55.082832%2F15.04">' +
+      'ул. Новая Заря, 53А' +
+      '</a>',
+  ],
   icon: 'restaurant',
 };
 

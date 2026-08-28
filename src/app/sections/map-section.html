@@ -16,7 +16,7 @@
           <span class="material-symbols-outlined mb-4 text-4xl text-secondary" aria-hidden="true">{{ place.icon }}</span>
           <h3 class="mb-2 font-display text-[1.75rem] leading-9 font-medium text-primary">{{ place.title }}</h3>
           @for (line of place.lines; track line) {
-            <p class="font-sans text-lg leading-7 text-on-surface">{{ line }}</p>
+            <p class="font-sans text-lg leading-7 text-on-surface" [innerHTML]="line"></p>
           }
         </article>
       }
@@ -34,5 +34,10 @@
     </div>
 
     <div class="mx-auto mt-12 h-0.5 w-16 bg-real-gold" aria-hidden="true"></div>
+
+    <p class="mx-auto w-full max-w-3xl md:px-16 mt-8 font-sans text-center leading-7 text-on-surface-variant">
+      Будем искренне рады видеть вас на нашей свадьбе.
+      Ваше присутствие сделает этот праздник незабываемым!
+    </p>
   </div>
 </section>
