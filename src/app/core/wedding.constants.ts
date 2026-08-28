@@ -126,8 +126,8 @@ export const STORY_CARDS: readonly StoryCard[] = [
     title: 'Первое свидание',
     year: '2022',
     text: 'Рабочие будни остались где-то внизу. Мы сидели на 25 этаже, смотрели на огни города и просто не могли наговориться',
-    src: '/assets/photos/story-first-date.jpg',
-    src2x: '/assets/photos/story-first-date@2x.jpg',
+    src: 'assets/photos/story-first-date.jpg',
+    src2x: 'assets/photos/story-first-date@2x.jpg',
     alt: 'Первое свидание Вероники и Дмитрия',
   },
   {
@@ -135,8 +135,8 @@ export const STORY_CARDS: readonly StoryCard[] = [
     title: 'Путешествия',
     year: '2023',
     text: 'Год, когда мы впервые увидели, как здорово открывать этот мир вместе. Когда в любой дороге тепло и уютно просто от того, кто рядом',
-    src: '/assets/photos/story-travel.jpg',
-    src2x: '/assets/photos/story-travel@2x.jpg',
+    src: 'assets/photos/story-travel.jpg',
+    src2x: 'assets/photos/story-travel@2x.jpg',
     alt: 'Путешествия Вероники и Дмитрия',
   },
   {
@@ -144,8 +144,8 @@ export const STORY_CARDS: readonly StoryCard[] = [
     title: 'Первый поход в кино',
     year: '2025',
     text: 'Сами мы до кинотеатра за всё время так и не дошли. За нас всё решила экскурсия, в программу которой просто входил мультфильм',
-    src: '/assets/photos/story-cinema.jpg',
-    src2x: '/assets/photos/story-cinema@2x.jpg',
+    src: 'assets/photos/story-cinema.jpg',
+    src2x: 'assets/photos/story-cinema@2x.jpg',
     alt: 'Первый поход в кино Вероники и Дмитрия, 2025',
   },
   {
@@ -153,8 +153,8 @@ export const STORY_CARDS: readonly StoryCard[] = [
     title: 'Предложение',
     year: '2026',
     text: 'Очень личный, волнительный и самый счастливый момент',
-    src: '/assets/photos/story-proposal.jpg',
-    src2x: '/assets/photos/story-proposal@2x.jpg',
+    src: 'assets/photos/story-proposal.jpg',
+    src2x: 'assets/photos/story-proposal@2x.jpg',
     alt: 'Предложение руки и сердца',
   },
 ];
