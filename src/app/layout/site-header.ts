@@ -15,4 +15,6 @@ export class SiteHeader {
   protected closeMenu(): void {
     this.menuOpen.set(false);
   }
+
+  protected readonly window = window;
 }

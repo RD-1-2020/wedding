@@ -4,7 +4,7 @@
   <div
     class="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:px-8 lg:px-16"
   >
-    <a href="#home" class="inline-flex shrink-0 items-center" aria-label="Вероника и Дмитрий">
+    <a [href]="window.location.search + '#home'" class="inline-flex shrink-0 items-center" aria-label="Вероника и Дмитрий">
       <img
         src="assets/logo.svg"
         width="89"
@@ -17,25 +17,25 @@
     <nav class="hidden h-full items-center gap-6 md:flex" aria-label="Разделы приглашения">
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#story"
+        [href]="window.location.search + '#story'"
       >
         История
       </a>
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#program"
+        [href]="window.location.search + '#program'"
       >
         Программа
       </a>
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#details"
+        [href]="window.location.search + '#details'"
       >
         Детали
       </a>
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#rsvp"
+        [href]="window.location.search + '#rsvp'"
       >
         Подтверждение
       </a>
@@ -74,16 +74,16 @@
     >
       <ul class="flex flex-col gap-1">
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#story" (click)="closeMenu()">История</a>
+          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" [href]="window.location.search + '#story'" (click)="closeMenu()">История</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#program" (click)="closeMenu()">Программа</a>
+          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" [href]="window.location.search + '#program'" (click)="closeMenu()">Программа</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#details" (click)="closeMenu()">Детали</a>
+          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" [href]="window.location.search + '#details'" (click)="closeMenu()">Детали</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#rsvp" (click)="closeMenu()">Подтверждение</a>
+          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" [href]="window.location.search + '#rsvp'" (click)="closeMenu()">Подтверждение</a>
         </li>
       </ul>
     </nav>

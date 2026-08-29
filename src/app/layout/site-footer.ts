@@ -4,4 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-site-footer',
   templateUrl: './site-footer.html',
 })
-export class SiteFooter {}
+export class SiteFooter {
+  protected readonly window = window;
+}
