@@ -69,12 +69,13 @@ export class MotionReveal {
         if (!(target instanceof Element)) {
           return;
         }
-        const link = target.closest('a[href^="#"]');
+        const link = target.closest('a[href*="#"]');
         if (!link) {
           return;
         }
         const href = link.getAttribute('href');
-        if (href && isInsideHashTarget(el, href)) {
+        const hash = href?.includes('#') ? href.slice(href.indexOf('#')) : '';
+        if (hash && isInsideHashTarget(el, hash)) {
           reveal();
         }
       };
