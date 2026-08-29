@@ -1,19 +1,19 @@
 <footer class="w-full border-t border-powder-pink/20 bg-surface-container-lowest py-12">
   <div class="mx-auto flex w-full max-w-[1200px] flex-col items-center gap-4 px-4 md:px-8 lg:px-16">
-    <a href="#home" class="inline-flex items-center" aria-label="Вероника и Дмитрий">
+    <a
+      routerLink="/"
+      fragment="home"
+      queryParamsHandling="preserve"
+      class="inline-flex items-center"
+      aria-label="Вероника и Дмитрий"
+    >
       <img
-        src="/assets/logo.svg"
+        src="assets/logo.svg"
         width="104"
         height="56"
         alt="Вероника и Дмитрий"
         class="h-14 w-auto"
       />
-    </a>
-    <a
-      class="font-sans text-base text-on-surface-variant hover:text-secondary"
-      href="#details"
-    >
-      Связаться с нами
     </a>
     <p class="font-sans text-base text-on-surface/60">© 2026 Вероника и Дмитрий</p>
   </div>

@@ -50,7 +50,7 @@
 | on-primary | `#ffffff` |
 | primary-container | `#f4c2c2` |
 | on-primary-container | `#734e4e` |
-| secondary | `#735c00` |
+| secondary | `#967c61` |
 | on-secondary | `#ffffff` |
 | secondary-container | `#fed65b` |
 | tertiary | `#486456` |
@@ -97,7 +97,7 @@
 
 ## Компоненты (M3)
 
-- **Primary button:** powder-pink, текст charcoal; или secondary-filled `#735c00` / on-secondary для «Отправить» как в `code.html`.
+- **Primary button:** powder-pink, текст charcoal; или secondary-filled `#967c61` / on-secondary для «Отправить» как в `code.html`.
 - **Secondary:** обводка real-gold 1.5px, текст charcoal (календарь / RSVP).
 - **TopAppBar:** sticky, surface/90, blur, нижняя граница powder-pink/30, без тяжёлой тени. Слева italic **V&D**, центр/справа nav, справа `calendar_month`.
 - **Поля:** outlined, фокус — real-gold + мягкое свечение.

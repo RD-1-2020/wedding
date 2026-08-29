@@ -37,10 +37,10 @@
 | background / surface | `#fff8f7` |
 | neon-glow | `#FFF0F5` |
 | primary | `#7B5455` |
-| secondary | `#735C00` |
+| secondary | `#967c61` |
 | tertiary | `#486456` |
 
-Material-переменные: `--mat-sys-primary`, `--mat-sys-primary-container`, `--mat-sys-secondary`, `--mat-sys-surface`, и остальные из шкалы. Фокус полей — real-gold (`form-field-overrides`). Filled-кнопка — secondary `#735C00`; outlined — обводка real-gold 1.5px; tonal — powder-pink.
+Material-переменные: `--mat-sys-primary`, `--mat-sys-primary-container`, `--mat-sys-secondary`, `--mat-sys-surface`, и остальные из шкалы. Фокус полей — real-gold (`form-field-overrides`). Filled-кнопка — secondary `#967c61`; outlined — обводка real-gold 1.5px; tonal — powder-pink.
 
 ## Пакеты
 

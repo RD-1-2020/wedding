@@ -11,10 +11,11 @@ import {
 import { MatButton } from '@angular/material/button';
 import { GuestQuery } from '../core/guest-query';
 import { googleCalendarUrl, scheduleItems } from '../core/wedding.constants';
+import { MotionReveal } from '../motion/motion-reveal';
 
 @Component({
   selector: 'app-schedule-section',
-  imports: [MatButton],
+  imports: [MatButton, MotionReveal],
   templateUrl: './schedule-section.html',
 })
 export class ScheduleSection {

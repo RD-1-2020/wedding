@@ -4,9 +4,15 @@
   <div
     class="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-4 md:px-8 lg:px-16"
   >
-    <a href="#home" class="inline-flex shrink-0 items-center" aria-label="Вероника и Дмитрий">
+    <a
+      routerLink="/"
+      fragment="home"
+      queryParamsHandling="preserve"
+      class="inline-flex shrink-0 items-center"
+      aria-label="Вероника и Дмитрий"
+    >
       <img
-        src="/assets/logo.svg"
+        src="assets/logo.svg"
         width="89"
         height="48"
         alt="Вероника и Дмитрий"
@@ -17,25 +23,33 @@
     <nav class="hidden h-full items-center gap-6 md:flex" aria-label="Разделы приглашения">
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#story"
+        routerLink="/"
+        fragment="story"
+        queryParamsHandling="preserve"
       >
         История
       </a>
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#program"
+        routerLink="/"
+        fragment="program"
+        queryParamsHandling="preserve"
       >
         Программа
       </a>
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#details"
+        routerLink="/"
+        fragment="details"
+        queryParamsHandling="preserve"
       >
         Детали
       </a>
       <a
         class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
-        href="#rsvp"
+        routerLink="/"
+        fragment="rsvp"
+        queryParamsHandling="preserve"
       >
         Подтверждение
       </a>
@@ -74,16 +88,40 @@
     >
       <ul class="flex flex-col gap-1">
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#story" (click)="closeMenu()">История</a>
+          <a
+            class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase"
+            routerLink="/"
+            fragment="story"
+            queryParamsHandling="preserve"
+            (click)="closeMenu()"
+          >История</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#program" (click)="closeMenu()">Программа</a>
+          <a
+            class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase"
+            routerLink="/"
+            fragment="program"
+            queryParamsHandling="preserve"
+            (click)="closeMenu()"
+          >Программа</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#details" (click)="closeMenu()">Детали</a>
+          <a
+            class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase"
+            routerLink="/"
+            fragment="details"
+            queryParamsHandling="preserve"
+            (click)="closeMenu()"
+          >Детали</a>
         </li>
         <li>
-          <a class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase" href="#rsvp" (click)="closeMenu()">Подтверждение</a>
+          <a
+            class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase"
+            routerLink="/"
+            fragment="rsvp"
+            queryParamsHandling="preserve"
+            (click)="closeMenu()"
+          >Подтверждение</a>
         </li>
       </ul>
     </nav>

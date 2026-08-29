@@ -5,12 +5,13 @@ import {
   MARINA_TELEGRAM,
   MARINA_VK,
 } from '../core/wedding.constants';
+import { MotionReveal } from '../motion/motion-reveal';
 import { IconTelegram } from '../ui/icon-telegram';
 import { IconVk } from '../ui/icon-vk';
 
 @Component({
   selector: 'app-details-section',
-  imports: [IconTelegram, IconVk],
+  imports: [IconTelegram, IconVk, MotionReveal],
   templateUrl: './details-section.html',
 })
 export class DetailsSection {

@@ -7,10 +7,11 @@ import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { GuestQuery } from '../core/guest-query';
 import { RsvpApi } from '../core/rsvp-api';
 import { RsvpStatus } from '../core/rsvp.types';
+import { MotionReveal } from '../motion/motion-reveal';
 
 @Component({
   selector: 'app-rsvp-section',
-  imports: [MatButton, MatCard, MatCardContent, MatFormField, MatInput, MatLabel, MatSlideToggle],
+  imports: [MatButton, MatCard, MatCardContent, MatFormField, MatInput, MatLabel, MatSlideToggle, MotionReveal],
   templateUrl: './rsvp-section.html',
 })
 export class RsvpSection {
