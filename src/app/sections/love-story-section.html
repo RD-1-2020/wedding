@@ -10,7 +10,11 @@
 
     <div class="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
       @for (card of cards; track card.id) {
-        <article class="gilt-card flex flex-col items-center p-8 text-center">
+        <article
+          appMotionReveal
+          class="gilt-card motion-reveal flex flex-col items-center p-8 text-center"
+          [style.--motion-delay]="$index * 100 + 'ms'"
+        >
           <app-photo-slot class="mb-6 w-full" [src]="card.src" [src2x]="card.src2x" [alt]="card.alt" [label]="card.title" />
           @if (card.year) {
             <p class="mb-2 font-sans text-sm font-semibold tracking-[0.15em] text-real-gold">{{ card.year }}</p>
