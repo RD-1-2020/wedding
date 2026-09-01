@@ -178,12 +178,12 @@ const REGISTRY_LOCATION: LocationCard = {
   ],
   icon: 'account_balance',
 };
-// TODO MAY BE LINK???
 const BANQUET_LOCATION: LocationCard = {
   id: 'banquet',
   title: 'Банкет',
   lines: [
     'Отель Slumo',
+    'зал Классика, 2 этаж',
     '<a href="https://2gis.ru/novosibirsk/firm/70000001029865759/82.945071%2C55.085941?m=82.937043%2C55.082832%2F15.04">' +
       'ул. Новая Заря, 53А' +
       '</a>',
