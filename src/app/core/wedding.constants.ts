@@ -171,6 +171,7 @@ const REGISTRY_LOCATION: LocationCard = {
   title: 'Регистрация',
   lines: [
     'Центральный ЗАГС',
+    'зал Модерн',
     '<a href="https://2gis.ru/novosibirsk/firm/141265769334771/82.917965%2C55.04151?m=82.918102%2C55.041619%2F18.63">' +
       'Красный проспект, 68' +
       '</a>',

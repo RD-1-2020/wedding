@@ -53,8 +53,13 @@ describe('wedding.constants', () => {
   it('hides the registry location unless the invitation is full', () => {
     expect(locationCards(false).map((card) => card.title)).toEqual(['Банкет']);
     expect(locationCards(true).map((card) => card.title)).toEqual(['Регистрация', 'Банкет']);
-    expect(locationCards(true)[0].lines).toContain('Красный проспект 68');
-    expect(locationCards(false)[0].lines).toEqual(['Отель Slumo', 'ул. Новая Заря, 53А']);
+    const registryLines = locationCards(true)[0].lines;
+    expect(registryLines[0]).toBe('Центральный ЗАГС');
+    expect(registryLines).toContain('зал Модерн');
+    expect(registryLines.some((line) => line.includes('Красный проспект, 68'))).toBe(true);
+    expect(registryLines.some((line) => line.includes('2gis.ru'))).toBe(true);
+    expect(locationCards(false)[0].lines[0]).toBe('Отель Slumo');
+    expect(locationCards(false)[0].lines.some((line) => line.includes('Новая Заря, 53А'))).toBe(true);
   });
 
   it('builds Google Calendar links for both modes', () => {
