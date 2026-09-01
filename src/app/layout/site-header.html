@@ -53,6 +53,14 @@
       >
         Подтверждение
       </a>
+      <a
+        class="font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase transition-colors hover:bg-powder-pink/10 hover:text-primary"
+        routerLink="/"
+        fragment="locations"
+        queryParamsHandling="preserve"
+      >
+        Локация
+      </a>
     </nav>
 
     <div class="flex items-center gap-1">
@@ -122,6 +130,15 @@
             queryParamsHandling="preserve"
             (click)="closeMenu()"
           >Подтверждение</a>
+        </li>
+        <li>
+          <a
+            class="block py-2 font-sans text-sm font-semibold tracking-[0.1em] text-on-surface-variant uppercase"
+            routerLink="/"
+            fragment="locations"
+            queryParamsHandling="preserve"
+            (click)="closeMenu()"
+          >Локация</a>
         </li>
       </ul>
     </nav>

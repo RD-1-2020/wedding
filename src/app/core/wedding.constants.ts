@@ -171,18 +171,19 @@ const REGISTRY_LOCATION: LocationCard = {
   title: 'Регистрация',
   lines: [
     'Центральный ЗАГС',
+    'зал Модерн',
     '<a href="https://2gis.ru/novosibirsk/firm/141265769334771/82.917965%2C55.04151?m=82.918102%2C55.041619%2F18.63">' +
       'Красный проспект, 68' +
       '</a>',
   ],
   icon: 'account_balance',
 };
-// TODO MAY BE LINK???
 const BANQUET_LOCATION: LocationCard = {
   id: 'banquet',
   title: 'Банкет',
   lines: [
     'Отель Slumo',
+    'зал Классика, 2 этаж',
     '<a href="https://2gis.ru/novosibirsk/firm/70000001029865759/82.945071%2C55.085941?m=82.937043%2C55.082832%2F15.04">' +
       'ул. Новая Заря, 53А' +
       '</a>',
