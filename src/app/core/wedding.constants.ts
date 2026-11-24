@@ -20,6 +20,8 @@ export const MARINA_PHONE_DISPLAY = '+8 (913) 008-71-17';
 export const MARINA_PHONE_TEL = 'tel:+89130087117';
 export const MARINA_TELEGRAM = 'https://t.me/Marinatuch';
 export const MARINA_VK = 'https://vk.ru/tuchmarinsk';
+export const GUEST_CHAT_VK_URL =
+  'https://vk.me/join/fSUDvQNHvjTJDowYvDPEqHxAjaXeaD_xzbI=';
 
 export interface ScheduleItem {
   readonly id: string;

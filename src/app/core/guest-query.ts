@@ -11,6 +11,8 @@ export class GuestQuery {
   });
 
   readonly isFull = computed(() => this.paramMap().get('full') === 'true');
+  /** True when `token` is present in the query string (even if empty). */
+  readonly hasToken = computed(() => this.paramMap().has('token'));
   readonly token = computed(() => this.paramMap().get('token') ?? '');
   readonly firstName = computed(() => this.paramMap().get('firstName') ?? '');
   readonly lastName = computed(() => this.paramMap().get('lastName') ?? '');

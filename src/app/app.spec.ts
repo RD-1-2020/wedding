@@ -55,9 +55,52 @@ describe('App', () => {
     expect(compiled.textContent).toContain(
       'В начале ноября мы пригласим вас в общий чат с нашей прекрасной ведущей Мариной',
     );
+    expect(compiled.textContent).not.toContain('Чат уже доступен');
+    expect(
+      compiled.querySelector(
+        '#details a[href="https://vk.me/join/fSUDvQNHvjTJDowYvDPEqHxAjaXeaD_xzbI="]',
+      ),
+    ).toBeNull();
     expect(compiled.querySelector('#details a[href^="https://t.me"]')).toBeTruthy();
     const detailsArticles = Array.from(compiled.querySelectorAll('#details article'));
     expect(detailsArticles.some((article) => article.className.includes('col-span-2'))).toBe(true);
+  });
+
+  it('should show guest chat join link when token query param is present', async () => {
+    const fixture = TestBed.createComponent(App);
+    await TestBed.inject(Router).navigateByUrl('/?token=demo');
+    fixture.detectChanges();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Чат для гостей');
+    expect(compiled.textContent).toContain('Чат уже доступен');
+    expect(compiled.textContent).toContain('вступайте по ссылке');
+    expect(compiled.textContent).not.toContain(
+      'В начале ноября мы пригласим вас в общий чат с нашей прекрасной ведущей Мариной',
+    );
+    const chatLink = compiled.querySelector(
+      '#details a[href="https://vk.me/join/fSUDvQNHvjTJDowYvDPEqHxAjaXeaD_xzbI="]',
+    ) as HTMLAnchorElement | null;
+    expect(chatLink).toBeTruthy();
+    expect(chatLink?.target).toBe('_blank');
+    expect(chatLink?.rel).toContain('noopener');
+    expect(chatLink?.rel).toContain('noreferrer');
+  });
+
+  it('should treat empty token query param as present for guest chat', async () => {
+    const fixture = TestBed.createComponent(App);
+    await TestBed.inject(Router).navigateByUrl('/?token=');
+    fixture.detectChanges();
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.textContent).toContain('Чат уже доступен');
+    expect(
+      compiled.querySelector(
+        '#details a[href="https://vk.me/join/fSUDvQNHvjTJDowYvDPEqHxAjaXeaD_xzbI="]',
+      ),
+    ).toBeTruthy();
   });
 
   it('should list the same anchors in the mobile menu', async () => {

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { GuestQuery } from '../core/guest-query';
 import {
+  GUEST_CHAT_VK_URL,
   MARINA_PHONE_DISPLAY,
   MARINA_PHONE_TEL,
   MARINA_TELEGRAM,
@@ -15,6 +17,10 @@ import { IconVk } from '../ui/icon-vk';
   templateUrl: './details-section.html',
 })
 export class DetailsSection {
+  private readonly guest = inject(GuestQuery);
+
+  readonly hasToken = this.guest.hasToken;
+  readonly guestChatUrl = GUEST_CHAT_VK_URL;
   readonly phoneDisplay = MARINA_PHONE_DISPLAY;
   readonly phoneTel = MARINA_PHONE_TEL;
   readonly telegram = MARINA_TELEGRAM;
